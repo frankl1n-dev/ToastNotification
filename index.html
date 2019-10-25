@@ -15,70 +15,74 @@
 </head>
 
 <body>
+
     <div class="container" style="margin-top:70px">
-        <button class="btn btn-primary" onclick="showNotif()">
-            Show notification
+        <button class="btn btn-success" onclick="showNotif()">
+            Success notification
         </button>
 
-        <button class="btn btn-danger">
-            Hide notification
+        <button class="btn btn-danger" onclick="showNotif1()">
+            Error notification
+        </button>
+
+        <button class="btn btn-info" onclick="showNotif2()">
+            Info notification
+        </button>
+
+        <button class="btn btn-warning" onclick="showNotif3()">
+            Warning notification
         </button>
     </div>
-    <div class="notification animated faster success">
-        <!-- Icone pour chaque etat de notification -->
-        <div class="icon-notification">
-            <i class="far fa-check-circle "></i>
-        </div>
-
-        <div class="notification-text">
-            Votre Numéro de telephone a été ajouté avec succès. <br>
-            Bienvenue a vous noble citoyen!
-        </div>
-
-    </div>
+    
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script src="jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="toast.js"></script>
     <script>
-        function animateCSS(element, animationName, callback) {
-            const node = document.querySelector(element)
-            node.classList.add('animated', animationName)
+        Alert.init({
+            isRing: true,
+            song:'./Skolp/Subtle.mp3',
+            time:5000,
+        })
+       Alert.toast({
+        text:"Bonsoir Régis!",
+        type:"success"
+       })
+    
+    function showNotif(){
+        Alert.toast({
+        text:"Alors Regis plugin de notification  te plait? Si t'a le temps passe sur mon site en dessous du texte.",
+        type:"success", 
+        link:"https://avjimmo.com"
+       })
+    }
 
-            function handleAnimationEnd() {
-                node.classList.remove('animated', animationName)
-                node.removeEventListener('animationend', handleAnimationEnd)
+    function showNotif1(){
+        Alert.toast({
+        text:"Regis Sorry pour l'erreur. Je le corrige.",
+        type:"error"
+       })
+    }
 
-                if (typeof callback === 'function') callback()
-            }
+    function showNotif2(){
+        Alert.toast({
+        text:"Pour info je n'ai suivi aucun Tuto pour le fait .. ça s'est fait a l'instint!",
+        type:"info"
+       })
+    }
+    function showNotif3(){
+        Alert.toast({
+        text:"Attention Regis je te previens que tu dois utiliser mon truc... :)",
+        type:"warning"
+       })
+    }
 
-            node.addEventListener('animationend', handleAnimationEnd)
-        }
-
-        function showNotif() {
-            document.querySelector('.notification').style.display = "flex"
-            document.querySelector('.notification').classList.remove("fadeOutUp");
-            document.querySelector('.notification').classList.add("fadeInDown");
-
-            setTimeout(() => {
-                hideNotif()
-            }, 3500);
-        }
-        function hideNotif() {
-            document.querySelector('.notification').classList.remove("fadeInDown");
-            setTimeout(() => {
-                document.querySelector('.notification').classList.add("fadeOutUp");
-            }, 1000);
-
-        }
     </script>
 </body>
 

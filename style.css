@@ -1,19 +1,30 @@
-* {
+html, body{
     padding: 0;
     margin: 0;
 }
 
-div.notification {
+
+/*===================================
+=====================================
+    Alert Css
+=====================================
+=====================================*/
+.alerts{
+    display: flex;
+    flex-direction: column;
+}
+div.alert {
     /* overflow: hidden; */
     position: absolute;
     opacity: 1;
     bottom: 20px;
     right: 5%;
     width: auto;
+    max-width: 450px;
     height: auto;
     padding: 10px;
-    box-shadow: 5px 10px 20px -20px rgb(0, 0, 0);
-    color: #fff;
+    box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
+
     border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -22,55 +33,98 @@ div.notification {
     display: none;
     align-items: center;
     justify-content: space-around;
+}
+div.alert-content{
+    color: #fff;
+    font-weight: 500;
     font-size: 0.95rem;
 }
 
 
-.btnClosed {
-    color: rgb(255, 255, 255);
-    font-weight: bolder;
-    font-size: 0.5rem;
-    cursor: pointer;
-    top: 10px;
-    right: 10px;
-    position: absolute;
-}
-
-.btnClosed:hover {
-
-    color: rgb(199, 106, 106);
-
-}
-
-.notification-text {
-    line-height: 1.3rem;
-    /* padding-right: 10px; */
-}
-
-.icon-notification {
+/*===================================
+=====================================
+    Style icon font awesome
+=====================================
+=====================================*/
+.icon-alert {
+    color: #fff;
     font-size: 1.5rem;
     margin-right: 0.9rem;
 }
 
-.success {
+/*===================================
+=====================================
+    Affichage du texte
+=====================================
+=====================================*/
+.alert-text{
+    padding-right: 5px;
+}
+.alert-text > a{
+    color: #fff;
+}
+
+.alert-text > a:hover{
+    color: yellow;
+}
+
+.alert-text {
+    line-height: 1.3rem;
+    /* padding-right: 10px; */
+}
+
+
+/*===================================
+=====================================
+   Affichage des liens
+=====================================
+=====================================*/
+
+hr#separator-lnk-txt{
+    margin-top: 10px;
+    margin-bottom: -5px;
+    border-color: #fff;
+}
+
+#lnk-alert{
+    padding-top:10px;
+    color: #fff;
+}
+/*===================================
+=====================================
+    Type D'alerte
+=====================================
+=====================================*/
+.alert-success {
     background-color: rgb(18, 182, 18);
+    border-color: rgb(18, 182, 18);
 }
 
-.error {
+.alert-error {
     background-color: rgb(204, 29, 29);
+    border-color: rgb(204, 29, 29);
 }
 
-.info {
+.alert-info {
     background-color: rgb(29, 119, 204);
+    border-color: rgb(29, 119, 204);
 }
 
-.layout {
-    position: relative;
-    bottom: 10px;
+.alert-warning{
+    background-color: #fb8c00;
+    border-color: #fb8c00;
 }
+
+
+
+/*===================================
+=====================================
+    Responsive avec Media Queries
+=====================================
+=====================================*/
 
 @media (max-width: 768px) {
-    div.notification {
+    div.alert {
         width: 55%;
         height: auto;
         padding: 10px;
@@ -78,7 +132,7 @@ div.notification {
 }
 
 @media (max-width: 576px) {
-    div.notification {
+    div.alert {
         width: 95%;
         height: auto;
         padding-top: 10px;
@@ -86,7 +140,7 @@ div.notification {
         font-size: 0.9rem;
     }
 
-    .notification-text {
+    .alert-text {
         line-height: 0.9rem;
     }
 }

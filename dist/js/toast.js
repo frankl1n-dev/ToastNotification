@@ -15,7 +15,8 @@ Alert = {
 			success: "alert-success",
 			error: "alert-error",
 			warning : "alert-warning"
-		}
+		},
+		TimeOutHide: ""
 		
 	}, 
 	toast: ({text, type, link = ""})=>{
@@ -27,7 +28,8 @@ Alert = {
 
 		    setTimeout(function() {
 			    	// On crée le contenu
-				$('body').append('<div class="alert animated faster"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div>')
+
+				$('body').append('<div class="alerts"><div class="alert animated faster" onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
 				if (type === 'success') {/*Success*/
 					document.querySelector(Alert.params.elAlert).classList.add(Alert.params.type.success)
 					document.querySelector(Alert.params.elIcon).classList.add('far','fa-check-circle')
@@ -59,7 +61,7 @@ Alert = {
 				document.querySelector(Alert.params.elAlert).classList.remove("fadeOutUp");
 			    document.querySelector(Alert.params.elAlert).classList.add("fadeInDown");
 			   
-			    setTimeout(function() {
+			    Alert.TimeOutHide = setTimeout(function() {
 					document.querySelector(Alert.params.elAlert).classList.remove("fadeInDown");
 
 					document.querySelector(Alert.params.elAlert).classList.add("fadeOutUp");
@@ -78,6 +80,26 @@ Alert = {
 		var audio = new Audio(song);
         audio.play();
 	},
+	pauseAlert(time){
+		 clearTimeout(time); 
+	},
+	makePause:()=>{
+		Alert.pauseAlert(Alert.TimeOutHide)
+		// window.alert('Bien')
+	},
+	continue:()=>{
+		 Alert.TimeOutHide = setTimeout(function() {
+					document.querySelector(Alert.params.elAlert).classList.remove("fadeInDown");
+
+					document.querySelector(Alert.params.elAlert).classList.add("fadeOutUp");
+					setTimeout(function() {
+					$('.alert').remove()
+					Alert.params.current = 0
+
+					}, 300);
+
+			   }, Alert.params.time);
+	},
 	init:({isRing = true, song = Alert.params.song , time})=>{
 		
 		Alert.params.song = song
@@ -85,6 +107,7 @@ Alert = {
 		Alert.params.time = time
 	}
 }
+
 
 
 

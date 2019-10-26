@@ -12,34 +12,36 @@ html, body{
 .alerts{
     display: flex;
     flex-direction: column;
-}
-div.alert {
-    /* overflow: hidden; */
     position: absolute;
-    opacity: 1;
     bottom: 20px;
     right: 5%;
+}
+div.alert {
     width: auto;
+    opacity: 0.75!important;
+    cursor: pointer;
     max-width: 450px;
     height: auto;
-    padding: 10px;
+    padding: 10px !important;
+    border-radius: 3.5px !important;
+    justify-content: space-around;
     box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
-
-    border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
-    display: none;
     align-items: center;
-    justify-content: space-around;
-}
-div.alert-content{
-    color: #fff;
-    font-weight: 500;
-    font-size: 0.95rem;
 }
 
+.alert:hover{
+    opacity: 1!important;
+}
+
+div.alert-content{
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
 
 /*===================================
 =====================================

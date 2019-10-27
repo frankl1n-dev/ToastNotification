@@ -45,11 +45,14 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="./dist/js/toast.js"></script>
     <script>
-          Alert.init({
+        
+        Alert.init({
             isRing: true,
             song:"./libs/Ping.mp3",
             time:5000,
+            typeSelected:"inverted"
         })
+
         $(document).ready(()=>{
           Alert.toast({
             text:"Bonsoir Régis!",

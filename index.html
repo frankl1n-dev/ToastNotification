@@ -50,18 +50,12 @@
             isRing: true,
             song:"./libs/Ping.mp3",
             time:5000,
-            typeSelected:"inverted"
+            transitionShow:"fadeIn",
+            transitionHide:"fadeOut",
+            typeSelected:"inverted",
+            position: "top-left"
         })
 
-        $(document).ready(()=>{
-          Alert.toast({
-            text:"Bonsoir Régis!",
-            type:"success"
-           })
-        })
-      
-       
-    
     function showNotif(){
         Alert.toast({
         text:"Alors Regis plugin de notification  te plait? Si t'a le temps passe sur mon site en dessous du texte.",

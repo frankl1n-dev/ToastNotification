@@ -32,7 +32,8 @@ Alert = {
 		transition:{
 			show: "fadeInDown",
 			hide:"fadeOutUp"/*Defini la transition a utilisé& sur la notification. utilise la librairie de animateCss*/
-		}
+		},
+		position: "top-center"
 	}, 
 	toast: ({text, type, link = ""}) => {
 		Alert.params.current ++
@@ -44,8 +45,21 @@ Alert = {
 		    setTimeout(function() {
 			    	// On crée le contenu
 
-				$('body').append('<div class="alerts"><div class="alert animated faster" onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
 				
+				if (Alert.params.position === 'top-right') {
+					$('body').append('<div class="alerts alerts-top-right "><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+				}else if(Alert.params.position=== 'top-left'){
+					$('body').append('<div class="alerts alerts-top-left"><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+				}else if(Alert.params.position=== 'bottom-left'){
+					$('body').append('<div class="alerts alerts-bottom-left"><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+				}else if(Alert.params.position=== 'bottom-right'){
+					$('body').append('<div class="alerts alerts-bottom-right"><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+				}else if(Alert.params.position=== 'bottom-center'){
+					$('body').append('<div class="alerts alerts-bottom-center"><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+				}else {/*top center*/
+					$('body').append('<div class="alerts alerts-top-center"><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+				}
+
 				if (Alert.params.typeSelected === 'inverted' ) {
 					if (type === 'success') {/*Success*/
 						document.querySelector(Alert.params.elAlert).classList.add(Alert.params.typeInverted.success)
@@ -83,7 +97,6 @@ Alert = {
 						document.querySelector(Alert.params.elIcon).classList.add('fas','fa-exclamation-triangle')
 					}
 				}
-				
 
 				if (link ==="" || link === " ") {
 					$(Alert.params.elLink).remove()
@@ -94,9 +107,9 @@ Alert = {
 					document.querySelector(Alert.params.elLink).style.display = 'block'
 					if (Alert.params.typeSelected === 'inverted' ) {
 						if (type === 'success') {/*Success*/
-							document.querySelector('#lnk-alert').style.color = ' rgb(18, 182, 18)'
+							document.querySelector('#lnk-alert').style.color = 'rgb(18, 182, 18)'
 						} else if(type === 'error') {/*Error*/
-							document.querySelector('#lnk-alert').style.color= 'rgb(204, 29, 29)'
+							document.querySelector('#lnk-alert').style.color=  'rgb(204, 29, 29)'
 						}else if(type === 'info'){
 							document.querySelector('#lnk-alert').style.color = 'rgb(29, 119, 204)'
 						}else{/*warning*/
@@ -152,7 +165,8 @@ Alert = {
 		time, 
 		transitionShow = Alert.params.transition.show,
 		transitionHide = Alert.params.transition.hide,
-		typeSelected = Alert.params.typeSelected
+		typeSelected = Alert.params.typeSelected,
+		position =  Alert.params.position
 	})=>{
 		Alert.params.song = song
 		Alert.params.isRing = isRing
@@ -160,6 +174,7 @@ Alert = {
 		Alert.params.transition.show = transitionShow
 		Alert.params.transition.hide = transitionHide
 		Alert.params.typeSelected = typeSelected
+		Alert.params.position = position
 	},
 	/*===========================================================
 	=============================================================*/

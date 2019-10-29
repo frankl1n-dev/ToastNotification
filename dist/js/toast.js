@@ -41,11 +41,8 @@ Alert = {
 			if (Alert.params.isRing) {
 	            Alert.playSong(Alert.params.song);
 		    }  	
-
 		    setTimeout(function() {
 			    	// On crée le contenu
-
-				
 				if (Alert.params.position === 'top-right') {
 					$('body').append('<div class="alerts alerts-top-right "><div class="alert animated  faster" onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
 				}else if(Alert.params.position=== 'top-left'){
@@ -115,6 +112,9 @@ Alert = {
 						}else{/*warning*/
 							document.querySelector('#lnk-alert').style.color='#fb8c00'
 						}
+					}else{
+							document.querySelector('#lnk-alert').style.color='#fff'
+
 					}
 					$(Alert.params.elLink).attr({href:link});
 					$(Alert.params.elLink).text(link)

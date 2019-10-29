@@ -47,17 +47,17 @@ Alert = {
 
 				
 				if (Alert.params.position === 'top-right') {
-					$('body').append('<div class="alerts alerts-top-right "><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+					$('body').append('<div class="alerts alerts-top-right "><div class="alert animated  faster" onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
 				}else if(Alert.params.position=== 'top-left'){
-					$('body').append('<div class="alerts alerts-top-left"><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+					$('body').append('<div class="alerts alerts-top-left"><div class="alert animated  faster" onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
 				}else if(Alert.params.position=== 'bottom-left'){
-					$('body').append('<div class="alerts alerts-bottom-left"><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+					$('body').append('<div class="alerts alerts-bottom-left"><div class="alert animated  faster" onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
 				}else if(Alert.params.position=== 'bottom-right'){
-					$('body').append('<div class="alerts alerts-bottom-right"><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+					$('body').append('<div class="alerts alerts-bottom-right"><div class="alert animated  faster" onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
 				}else if(Alert.params.position=== 'bottom-center'){
-					$('body').append('<div class="alerts alerts-bottom-center"><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+					$('body').append('<div class="alerts alerts-bottom-center"><div class="alert animated faster " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
 				}else {/*top center*/
-					$('body').append('<div class="alerts alerts-top-center"><div class="alert animated " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
+					$('body').append('<div class="alerts alerts-top-center"><div class="alert animated faster " onmouseover="Alert.makePause()" onmouseout="Alert.continue()"><div class="icon-alert"><i id="icon-alert" class=""></i></div><div class="alert-content"><span class="alert-text"></span></div></div></div>')
 				}
 
 				if (Alert.params.typeSelected === 'inverted' ) {

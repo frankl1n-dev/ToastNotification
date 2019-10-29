@@ -4,6 +4,7 @@
 =====================================
 =====================================*/
 .alerts{
+    overflow: hidden;
     display: flex;
     /*flex-direction: column;*/
 }
@@ -58,7 +59,7 @@ div.alert {
     height: auto;
     padding: 10px !important;
     border-radius: 3.5px !important;
-    box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
+    box-shadow: 0px 0px 20px -15px rgb(0, 0, 0);
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
@@ -159,7 +160,7 @@ hr.separator-lnk-txt{
 /*========= Success Inverted ========*/
 .alert-success-inverted {
     background-color: #fff;
-    border-color: rgb(18, 182, 18);
+    border-color: rgb(18, 182, 18, 0.2);
 }
 .icon-alert-success-inverted {
     color:rgb(18, 182, 18) !important;
@@ -181,7 +182,7 @@ div.alert-content-success-inverted{
 
 .alert-error-inverted {
     background-color: #fff;
-    border-color: rgb(204, 29, 29);
+    border-color: rgb(204, 29, 29, 0.2);
 }
 .icon-alert-error-inverted {
     color:rgb(204, 29, 29) !important;
@@ -203,7 +204,7 @@ div.alert-content-error-inverted{
 
 .alert-info-inverted {
     background-color: #fff;
-    border-color: rgb(29, 119, 204);
+    border-color: rgb(29, 119, 204,0.2);
 }
 .icon-alert-info-inverted {
     color: rgb(29, 119, 204) !important;
@@ -219,7 +220,7 @@ div.alert-content-info-inverted{
 
 .lnk-alert-info-inverted{
     padding-top:10px;
-    color:  rgb(29, 119, 204) !important;
+    color:  rgb(29, 119, 204, 0.2) !important;
     color: #fff;
 }
 /*========= Warning Inverted ========*/
@@ -227,7 +228,7 @@ div.alert-content-info-inverted{
 .alert-warning-inverted{
     background-color: #fff;
     
-    border-color: #fb8c00;
+    border-color: rgb(251,140,0, 0.2);
 }
 .icon-alert-warning-inverted {
     color: #fb8c00 !important;
